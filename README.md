@@ -1,13 +1,15 @@
-# Online Learning Platform.
+# Online Learning Platform
 
 ## virtual environment set up
 - python -m venv venv
 
 
 ## Activate the virtual environment:
-- venv\Scripts\activate
-- source venv/bin/activate 
-- pip3 install -r requirements.txt ### (pip freeze > requirements.txt)
+- venv\Scripts\activate (win)
+- source venv/bin/activate (ubuntu)
+
+## start project
+- pip3 install -r requirements.txt (pip freeze > requirements.txt)
 - python manage.py makemigrations 
 - python manage.py migrate 
 - python manage.py createsuperuser --username admin --email admin@example.com 
