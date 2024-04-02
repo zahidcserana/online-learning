@@ -20,8 +20,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-8k!=zsjz_2^-q4z%3u2)3^k($*-8i0#4!en&p%6vd#=xllxgmz'
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'django-insecure-8k!=zsjz_2^-q4z%3u2)3^k($*-8i0#4!en&p%6vd#=xllxgmz'
+# SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -78,27 +78,28 @@ WSGI_APPLICATION = 'tutorial.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': config('MYSQL_DATABASE'),
-        'USER': config('MYSQL_USER'),
-        'PASSWORD': config('MYSQL_PASSWORD'),
-        'HOST': config('DB_HOST', 'db'),  # Use 'db' as default from .env
-        'PORT': config('DB_PORT', '3306'),  # Use '3306' as default from .env
+        'NAME': 'happy_bears',
+        'USER': 'root',
+        'PASSWORD': '',
+        "OPTIONS": {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        },
     }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': config('MYSQL_DATABASE'),
+    #     'USER': config('MYSQL_USER'),
+    #     'PASSWORD': config('MYSQL_PASSWORD'),
+    #     'HOST': config('DB_HOST', 'db'),  # Use 'db' as default from .env
+    #     'PORT': config('DB_PORT', '3306'),  # Use '3306' as default from .env
+    # }
 }
 
 # 'default': {
 #     'ENGINE': 'django.db.backends.sqlite3',
 #     'NAME': BASE_DIR / 'db.sqlite3',
 # }
-# 'default': {
-#     'ENGINE': 'django.db.backends.mysql',
-#     'NAME': 'happy_bears',
-#     'USER': 'root',
-#     'PASSWORD': '',
-#     "OPTIONS": {
-#         'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-#     },
-# }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
