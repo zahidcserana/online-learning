@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'tutorial.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'happy_bears',
+        'NAME': 'enrollment',
         'USER': 'root',
         'PASSWORD': '',
         "OPTIONS": {
