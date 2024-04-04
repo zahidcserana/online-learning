@@ -1,24 +1,28 @@
 # Online Learning Platform
 
-## virtual environment set up
+## Run in Docker
+- docker-compose up
+- docker exec -it django bash
+
+## Run without Docker
 - python -m venv venv
-
-
-## Activate the virtual environment:
 - venv\Scripts\activate (win)
-- source venv/bin/activate (ubuntu)
 
 ## Database setup
-- Set the DB name in tutorial\settings.py
+Set the DB name in tutorial\settings.py (left if using docker)
 
 ## start project
-- pip3 install -r requirements.txt (pip freeze > requirements.txt)
+- pip3 install -r requirements.txt (left if using docker)
 - python manage.py makemigrations 
 - python manage.py migrate 
 
-## User setup: 
+## User setup
+(left if using docker)
 #### password: admin
 - python manage.py createsuperuser --username admin --email admin@example.com 
+
+## Run the project
+(left if using docker)
 - python manage.py runserver
 
 ## Postman Test
@@ -50,3 +54,8 @@
 - pip install coverage 
 - coverage run manage.py test 
 - coverage report
+
+
+## More commands 
+- pip freeze > requirements.txt
+- docker exec -it pgdb psql -U postgres

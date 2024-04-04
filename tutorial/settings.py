@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-from django_filters import rest_framework
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -76,30 +75,37 @@ WSGI_APPLICATION = 'tutorial.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'enrollment',
-        'USER': 'root',
-        'PASSWORD': '',
-        "OPTIONS": {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        },
-    }
     # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': config('MYSQL_DATABASE'),
-    #     'USER': config('MYSQL_USER'),
-    #     'PASSWORD': config('MYSQL_PASSWORD'),
-    #     'HOST': config('DB_HOST', 'db'),  # Use 'db' as default from .env
-    #     'PORT': config('DB_PORT', '3306'),  # Use '3306' as default from .env
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'enrollment',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'pgzahid',
+    #     'HOST': 'localhost',
+    #     'PORT': '5432',
     # }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'pgdb',
+        'PORT': 5432,
+    }
 }
 
 # 'default': {
 #     'ENGINE': 'django.db.backends.sqlite3',
 #     'NAME': BASE_DIR / 'db.sqlite3',
 # }
-
+# 'default': {
+#     'ENGINE': 'django.db.backends.mysql',
+#     'NAME': 'enrollment',
+#     'USER': 'root',
+#     'PASSWORD': '',
+#     "OPTIONS": {
+#         'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+#     },
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
